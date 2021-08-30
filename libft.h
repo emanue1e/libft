@@ -38,6 +38,8 @@ char		*ft_strndup(const char *s1, size_t n);
 char		*ft_strncpy(char *dst, const char *src, size_t len);
 
 char		*ft_itoa(int n);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 void		ft_putchar_fd(char c, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
