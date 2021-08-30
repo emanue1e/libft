@@ -8,7 +8,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (len--)
 	{
 		if (s[len] == (char)c)
-			return ((char *)(s + len));
+			return ((char *)(&s[len]));
 	}
 	return (NULL);
 }
