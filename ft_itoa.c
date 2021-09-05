@@ -11,8 +11,8 @@ int	ft_get_digits(int n)
 char	*ft_itoa(int n)
 {
 	unsigned int		nb;
-	int			len;
-	char			*str;
+	int					len;
+	char				*str;
 
 	nb = (unsigned int)n;
 	len = ft_get_digits(n);
@@ -21,7 +21,7 @@ char	*ft_itoa(int n)
 		nb = -(unsigned int)n;
 		len++;
 	}
-	str = (char *)malloc((len + 1)*sizeof(char));
+	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	while (len-- >= 0)
