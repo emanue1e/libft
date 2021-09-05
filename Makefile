@@ -1,6 +1,6 @@
 NAME = libft.a
 CFLAGS = -Wall -Werror -Wextra
-SRC = ft_bzero.c \
+SOURCE = ft_bzero.c \
 	ft_calloc.c \
 	ft_atoi.c \
 	ft_isalnum.c \
@@ -33,14 +33,14 @@ SRC = ft_bzero.c \
 	ft_putnbr_fd.c \
 	ft_putstr_fd.c 
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SOURCE:.c=.o)
 
 .PHONY : all clean fclean re
 
-all : $(NAME)
+all: $(NAME)
 
 $(NAME) :  $(OBJ)	
-	@echo "Compiling \033[42m$(NAME)\033[0m..."
+	@echo "Compiling $(NAME) ..."
 	@gcc $(CFLAGS) -c $(SOURCE)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
