@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: etorrefi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/07 18:35:23 by etorrefi          #+#    #+#             */
+/*   Updated: 2021/09/07 18:35:24 by etorrefi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -15,3 +27,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr((char *)s1, 0, size + 1);
 	return (str);
 }
+

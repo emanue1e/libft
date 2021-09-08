@@ -1,5 +1,5 @@
 NAME = libft.a
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -c
 SOURCE = ft_bzero.c \
 	ft_calloc.c \
 	ft_atoi.c \
@@ -25,6 +25,7 @@ SOURCE = ft_bzero.c \
 	ft_strrchr.c \
 	ft_strtrim.c \
 	ft_substr.c \
+	ft_split.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_itoa.c \
@@ -40,17 +41,16 @@ OBJ = $(SOURCE:.c=.o)
 all: $(NAME)
 
 $(NAME) :  $(OBJ)	
-	@echo "Compiling $(NAME) ..."
-	@gcc $(CFLAGS) -c $(SOURCE)
-	@ar rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
+	echo "Compiling $(NAME) ..."
+	gcc $(CFLAGS) $(SOURCE)
+	ar rc $(NAME) $(OBJ)
 
 clean :
-	@echo "Removing object files ..."
-	@rm -rf $(OBJ)
+	echo "Removing object files ..."
+	rm -rf $(OBJ)
 
 fclean : clean
-	@echo "Removing $(NAME) ..."
-	@rm -rf $(NAME)
+	echo "Removing $(NAME) ..."
+	rm -rf $(NAME)
 
 re : fclean all
