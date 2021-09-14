@@ -6,7 +6,7 @@
 /*   By: etorrefi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 18:34:15 by etorrefi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:34:16 by etorrefi         ###   ########.fr       */
+/*   Updated: 2021/09/09 21:03:16 by etorrefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		write(fd, &s[i++], 1);
-	write(fd, "\n", 1);
+	while (*s)
+		ft_putchar_fd(*s++, fd);
+	ft_putchar_fd('\n', fd);
 }

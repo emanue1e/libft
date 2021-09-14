@@ -6,7 +6,7 @@
 /*   By: etorrefi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 18:33:44 by etorrefi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:33:45 by etorrefi         ###   ########.fr       */
+/*   Updated: 2021/09/09 20:55:58 by etorrefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char	*ft_itoa(int n)
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
+	str[len] = '\0';
 	while (len-- >= 0)
 	{
 		str[len] = nb % 10 + '0';

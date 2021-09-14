@@ -6,7 +6,7 @@
 /*   By: etorrefi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 18:34:22 by etorrefi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:34:23 by etorrefi         ###   ########.fr       */
+/*   Updated: 2021/09/09 21:02:08 by etorrefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		write(fd, &s[i++], 1);
+	if (!s)
+		return ;
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }

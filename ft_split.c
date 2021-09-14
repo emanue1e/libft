@@ -6,13 +6,13 @@
 /*   By: etorrefi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 18:34:28 by etorrefi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:34:30 by etorrefi         ###   ########.fr       */
+/*   Updated: 2021/09/08 17:20:16 by etorrefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(const char *str, char c)
+static int	count_words(const char *str, char c)
 {
 	int	i;
 	int	j;
@@ -33,7 +33,7 @@ int	count_words(const char *str, char c)
 	return (i);
 }
 
-char	*word_dup(const char *str, int start, int finish)
+static char	*word_dup(const char *str, int start, int finish)
 {
 	char	*word;
 	int		i;

@@ -6,7 +6,7 @@
 /*   By: etorrefi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 18:34:47 by etorrefi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:34:49 by etorrefi         ###   ########.fr       */
+/*   Updated: 2021/09/10 15:13:56 by etorrefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	while (s2[j])
 		str[i++] = s2[j++];
-	str[i + j] = '\0';
+	str[i] = '\0';
 	return (str);
 }

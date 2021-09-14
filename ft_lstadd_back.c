@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etorrefi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 18:34:05 by etorrefi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:34:07 by etorrefi         ###   ########.fr       */
+/*   Created: 2021/09/10 18:06:47 by etorrefi          #+#    #+#             */
+/*   Updated: 2021/09/10 20:00:20 by etorrefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	unsigned char	*dest;
-	unsigned char	*source;
+	t_list	*temp;
 
-	dest = (unsigned char *)dst;
-	source = (unsigned char *)src;
-	if (dest <= source)
-		ft_memcpy(dest, source, len);
+	if (!*lst)
+		*lst = new;
 	else
 	{
-		while (len--)
-			(dest)[len] = (source[len]);
+		temp = ft_lstlast(*lst);
+		temp->next = new;
 	}
-	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: etorrefi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 18:35:23 by etorrefi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:35:24 by etorrefi         ###   ########.fr       */
+/*   Updated: 2021/09/08 13:45:55 by etorrefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr((char *)s1, 0, size + 1);
 	return (str);
 }
-

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etorrefi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 18:34:05 by etorrefi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:34:07 by etorrefi         ###   ########.fr       */
+/*   Created: 2021/09/10 20:08:07 by etorrefi          #+#    #+#             */
+/*   Updated: 2021/09/10 20:31:16 by etorrefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	unsigned char	*dest;
-	unsigned char	*source;
+	t_list	*temp;
 
-	dest = (unsigned char *)dst;
-	source = (unsigned char *)src;
-	if (dest <= source)
-		ft_memcpy(dest, source, len);
-	else
+	if (lst)
 	{
-		while (len--)
-			(dest)[len] = (source[len]);
+		while (*lst)
+		{
+			temp = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			(*lst) = temp;
+		}
 	}
-	return (dst);
 }
