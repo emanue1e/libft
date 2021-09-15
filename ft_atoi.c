@@ -12,37 +12,43 @@
 
 #include "libft.h"
 
-static int	isspace(const char c)
+static int	ft_check_overflow(int num, int sign)
 {
-	return (c == ' ' || c == '\n' || c == '\t' || c == '\v'
-		|| c == '\f' || c == '\r');
+	unsigned int	nb;
+
+	nb = num;
+	if (nb > 2147483648 && sign)
+		return (0);
+	if (nb > 2147483647 && !sign)
+		return (-1);
+	return (1);
 }
 
 int	ft_atoi(const char *str)
 {
-	int	result;
 	int	sign;
-	int	i;
+	int	num;
+	int	ret;
 
-	result = 0;
-	sign = 1;
-	i = 0;
-	while (isspace(str[i]))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	num = 0;
+	sign = 0;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
-			sign = -sign;
-		i++;
+		if (*str == '-')
+			sign = 1;
+		str++;
 	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		result = result * 10 + (str[i] - '0');
-		i++;
+		num = num * 10 + (*str - '0');
+		str++;
 	}
-	if (ft_strncmp(str, "99999999999999999999999999", 26) == 0)
-		return (-1);
-	if (ft_strncmp(str, "-99999999999999999999999999", 27) == 0)
-		return (0);
-	return (sign * result);
+	ret = ft_check_overflow(num, sign);
+	if (ret != 1)
+		return (ret);
+	if (sign)
+		return (num *= -1);
+	return (num);
 }

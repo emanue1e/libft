@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_get_digits(int n)
+static int	ft_get_digits(int n)
 {
 	if ((n / 10) == 0)
 		return (1);
